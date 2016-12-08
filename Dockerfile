@@ -8,8 +8,8 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
 RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
 RUN apt-get update && apt-get install -y oracle-java8-installer \
 &&  rm -rf /var/lib/apt/lists/*
-RUN sudo apt-get install iputils-ping
-
+RUN apt-get update && apt-get install -y iputils-ping \
+&&  rm -rf /var/lib/apt/lists/*
 # Define working directory
 WORKDIR /data
 

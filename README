@@ -1,0 +1,10 @@
+
+
+#Build docker file. 
+docker build -t netmon .
+
+#Run netmon with docker with console 
+docker run -ti --rm -v /home/pi/app:/data netmon java -jar NetMon.jar inet 8.8.8.8 0 https://netmon-be85d.firebaseio.com/
+
+#Run netmon with docker with detach mode 
+docker run -d --rm -v /home/pi/app:/data netmon java -jar NetMon.jar inet 8.8.8.8 0 https://netmon-be85d.firebaseio.com/
